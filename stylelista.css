@@ -1,0 +1,18 @@
+#corpo{
+    background-color: #1f1f1f;
+    height: 100px;
+    width: 500px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+div{
+    margin: 10px;
+}
+h1{
+    margin-left: 10px;
+}
+table{
+    color: white; float: left; border-radius: 5px; margin: 10px;
+}
