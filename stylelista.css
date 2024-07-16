@@ -1,6 +1,6 @@
 #corpo{
     background-color: #1f1f1f;
-    height: 100px;
+    height: 500px;
     width: 500px;
     border-radius: 5px;
     display: flex;
@@ -15,4 +15,10 @@ h1{
 }
 table{
     color: white; float: left; border-radius: 5px; margin: 10px;
+}
+td{
+    height: 10px;
+}
+th{
+    height: 10px;
 }

@@ -47,8 +47,9 @@
     <tr>
         <th>Código</th>
         <th>Nome</th>
-        <th>Estado</th>
-        <th>Alterar</th>
+        <th>Email</th>
+        <th>Senha</th>
+        <th>Atualizar</th>
         <th>Deletar</th>
     </tr>
     <?php
@@ -57,9 +58,10 @@
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
             echo "<td>".$row['nome']."</td>";
-            echo "<td>".$row['estado']."</td>";
-            echo "<td><a href='alteraCidade.php?id=".$row['id']."'>Alterar</a></td>";
-            echo "<td><a href='deletarCidade.php?id=".$row['id']."'>Deletar</a></td>";
+            echo "<td>".$row['email']."</td>";
+            echo "<td>".$row['senha']."</td>";
+            echo "<td><a href='alteraCliente.php?id=".$row['id']."'>Alterar</a></td>";
+            echo "<td><a href='deletarCliente.php?id=".$row['id']."'>Deletar</a></td>";
             echo "</tr>";
         }
     ?>

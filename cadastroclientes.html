@@ -32,48 +32,30 @@
         </div>
       </nav>
     <div>
-    <form action="cadastrocidade.php" method="post">
+    <form action="cadastrocliente.php" method="post">
         <div id="corpo">
             <fieldset>
-                <legend>Cadastro da CIDADE</legend>
+                <legend>Cadastro de Clietes</legend>
                 <div class="row g-3 align-items-center">
                     <div class="col-auto">
-                      <label for="nome" class="col-form-label">Nome da Cidade:</label>
+                      <label for="nome" class="col-form-label">Nome do Cliente:</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" name ="nome" id="nome" class="form-control" aria-describedby="NomeCidade" required>
+                      <input type="text" name ="nome" id="nome" class="form-control" aria-describedby="NomeCliente" required>
                     </div>
+                    <div class="col-auto">
+                        <label for="email" class="col-form-label">Email do Cliente:</label>
+                      </div>
+                      <div class="col-auto">
+                        <input type="text" name ="email" id="email" class="form-control" aria-describedby="EmailCliente" required>
+                      </div>
+                      <div class="col-auto">
+                        <label for="senha" class="col-form-label">Senha do Cliente:</label>
+                      </div>
+                      <div class="col-auto">
+                        <input type="password" name ="senha" id="senha" class="form-control" aria-describedby="SenhaCliente" required>
+                      </div>
                   </div>
-                <div>
-                    <label for="estado">Sigla do Estado:</label>
-                    <select class="form-select" name="estado" id="estado">
-                        <option value="AC">AC</option>
-                        <option value="AL">AL</option>
-                        <option value="AP">AP</option>
-                        <option value="AM">AM</option>
-                        <option value="BA">BA</option>
-                        <option value="CE">CE</option>
-                        <option value="ES">ES</option>
-                        <option value="GO">GO</option>
-                        <option value="MA">MA</option>
-                        <option value="MT">MT </option>
-                        <option value="MS">MS</option>
-                        <option value="MG">MG </option>
-                        <option value="PA">PA</option>
-                        <option value="PB">PB</option>
-                        <option value="PE">PE</option>
-                        <option value="PI">PI</option>
-                        <option value="RJ">RJ</option>
-                        <option value="RN">RN</option>
-                        <option value="RS">RS</option>
-                        <option value="RO">RO</option>
-                        <option value="RR">RR</option>
-                        <option value="SC">SC</option>
-                        <option value="SP">SP</option>
-                        <option value="SE">SE</option>
-                        <option value="TO">TO</option>
-                    </select>
-                </div>
                 <div>
                     <button type="submit">Cadastrar</button>
                 </div>
