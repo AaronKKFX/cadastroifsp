@@ -32,7 +32,7 @@
         }
 
     ?>
-    <form action="paginainicial.html">
+    <form action="index.html">
     <input type="submit" value="Ir para o Index" />
 </form>
 </body>
