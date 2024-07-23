@@ -35,7 +35,7 @@
     
 <?php
     include('includes/conexao.php');
-    $sql = "SELECT * FROM cidade";
+    $sql = "SELECT * FROM cliente";
     //Executa a consulta
     $result  = mysqli_query($con, $sql);
     // Retorna apenas uma linha

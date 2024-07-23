@@ -4,7 +4,7 @@
     $id =$_POST['id'];
     $nome =$_POST['nome'];
     $estado =$_POST['email'];
-    $senha =$_POST['']
+    $senha =$_POST['senha']
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
     <?php
     echo "<p>ID: $id</p>";
     echo "<p>NOME: $nome</p>";
-    echo "<p>EMAIL: $estado</p>"; 
+    echo "<p>EMAIL: $email</p>"; 
     echo "<p>SENHA: $senha</p>"; 
         $sql = "UPDATE cliente SET 
                     nome  = '$nome',
