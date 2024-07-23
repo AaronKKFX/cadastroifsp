@@ -10,9 +10,9 @@
 </head>
 <body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" >
+<nav class="navbar navbar-expand-lg bg-body-tertiary" >
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Cadastro</a>
+          <a class="navbar-brand" href="#">listar Cliente</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -22,10 +22,16 @@
                 <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cadastrocidade.html">Cadastrar</a>
+                <a class="nav-link" href="cadastrocidade.html">Cadastrar Cidade</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="ListarCidade.php">Listar</a>
+                <a class="nav-link" href="cadastroclientes.php">Cadastrar Cliente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ListarCidade.php">Listar Cidade</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ListarClientes.php">Listar Cliente</a>
               </li>
             </ul>
           </div>
@@ -35,7 +41,9 @@
     
 <?php
     include('includes/conexao.php');
-    $sql = "SELECT * FROM cliente";
+    $sql = "SELECT cli.id, cli.nome nomecliente ,cli.email,cli.ativo,
+    cid.nome nomecidade, cid.estado FROM cliente cli
+     LEFT JOIN cidade cid on cid.id = cidade_id ";
     //Executa a consulta
     $result  = mysqli_query($con, $sql);
     // Retorna apenas uma linha
@@ -48,7 +56,9 @@
         <th>Código</th>
         <th>Nome</th>
         <th>Email</th>
-        <th>Senha</th>
+        <th>Ativo</th>
+        <th>Cidade</th>
+        <th>Estado</th>
         <th>Atualizar</th>
         <th>Deletar</th>
     </tr>
@@ -57,11 +67,13 @@
         {
             echo "<tr>";
             echo "<td>".$row['id']."</td>";
-            echo "<td>".$row['nome']."</td>";
+            echo "<td>".$row['nomecliente']."</td>";
             echo "<td>".$row['email']."</td>";
-            echo "<td>".$row['senha']."</td>";
-            echo "<td><a href='alteraCliente.php?id=".$row['id']."'>Alterar</a></td>";
-            echo "<td><a href='deletarCliente.php?id=".$row['id']."'>Deletar</a></td>";
+            echo "<td>".($row['ativo'] == 1 ? 'SIM' :'NÃO')."</td>";
+            echo "<td>".$row['nomecidade']."</td>";
+            echo "<td>".$row['estado']."</td>";
+            echo "<td><a href='alteracliente.php?id=".$row['id']."'>Alterar</a></td>";
+            echo "<td><a href='deletarcliente.php?id=".$row['id']."'>Deletar</a></td>";
             echo "</tr>";
         }
     ?>

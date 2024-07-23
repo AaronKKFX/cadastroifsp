@@ -1,10 +1,12 @@
 <?php
 
     include('includes/conexao.php');
-    $id =$_POST['id'];
-    $nome =$_POST['nome'];
-    $estado =$_POST['email'];
-    $senha =$_POST['senha']
+    $id = $_POST['id'];
+    $nome = $_POST['nome'];
+    $estado = $_POST['email'];
+    $senha = $_POST['senha'];
+    $ativo= $_POST['ativo'];
+    $cidade= $_POST['cidade'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,10 +23,14 @@
     echo "<p>NOME: $nome</p>";
     echo "<p>EMAIL: $email</p>"; 
     echo "<p>SENHA: $senha</p>"; 
+    echo "<p>ATIVO:$ativo</p>";
+    echo "<p>CIDADE:$cidade</p>";
         $sql = "UPDATE cliente SET 
                     nome  = '$nome',
                     email = '$email',
-                    senha = '$senha'
+                    senha = '$senha',
+                    ativo = '$ativo',
+                    cidade = '$cidade'
                 WHERE id = $id ";
         $result = mysqli_query($con,$sql);
         if ($result)

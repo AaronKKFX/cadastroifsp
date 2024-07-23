@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <nav class="navbar navbar-expand-lg bg-body-tertiary" >
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Cadastro</a>
+          <a class="navbar-brand" href="#">Cadastro Cliente</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -22,17 +22,23 @@
                 <a class="nav-link active" aria-current="page" href="Index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="cadastrocidade.html">Cadastrar</a>
+                <a class="nav-link" href="cadastrocidade.html">Cadastrar Cidade</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="ListarCidade.php">Listar</a>
+                <a class="nav-link" href="cadastroclientes.php">Cadastrar Cliente</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ListarCidade.php">Listar Cidade</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="ListarClientes.php">Listar Cliente</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
     <div>
-    <form action="cadastrocliente.php" method="post">
+    <form action="cadastroclienteExe.php" method="post">
         <div id="corpo">
             <fieldset>
                 <legend>Cadastro de Clietes</legend>
@@ -56,9 +62,27 @@
                         <input type="password" name ="senha" id="senha" class="form-control" aria-describedby="SenhaCliente" required>
                       </div>
                   </div>
-                <div>
+                  <div>
+                    <input type="checkbox" id="ativo" name="ativo" value="1" checked>
+                    <label for="ativo">Ativo</label>
+                  </div>
+                  <div>
+                    <label for="cidade">CIDADE</label>
+                    <select name="cidade" id="cidade">
+                      <?php 
+                        include('includes/conexao.php');
+                        $sql = "SELECT * FROM cidade";
+                        $result = mysqli_query($con,$sql);
+                        while($row = mysqli_fetch_array($result))
+                        {
+                          echo "<option value='".$row['id']."'>".$row['nome']."/".$row['estado']."</option>";
+                        }
+                      ?>
+                    </select>
+                  </div>
+                  <div>
                     <button type="submit">Cadastrar</button>
-                </div>
+                  </div>
             </fieldset>
         </div>
         </form>
