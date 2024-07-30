@@ -81,9 +81,9 @@
                         include('includes/conexao.php');
                         $sql = "SELECT * FROM cidade";
                         $result = mysqli_query($con,$sql);
-                        while($row = mysqli_fetch_array($result))
+                        while($rowCidade = mysqli_fetch_array($result))
                         {
-                          echo "<option value='".$row['id']."'>".$row['nome']."/".$row['estado']."</option>";
+                          echo "<option value='".$rowCidade['id']."' ". $rowCidade['id'] == $row['id_cliente'] ? "selected" : "" .">".$rowCidade['nome']."/".$rowCidade['estado']."</option>";
                         }
                       ?>
                     </select>
