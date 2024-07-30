@@ -55,24 +55,24 @@
                       <label for="nome" class="col-form-label">Nome do Cliente:</label>
                     </div>
                     <div class="col-auto">
-                      <input type="text" name ="nome" id="nome" class="form-control" aria-describedby="NomeCliente" required>
+                      <input type="text" name ="nome" id="nome" class="form-control" value="<?php echo $row['nome']?>" aria-describedby="NomeCliente" required>
                     </div>
                     <div class="col-auto">
                         <label for="email" class="col-form-label">Email do Cliente:</label>
                       </div>
                       <div class="col-auto">
-                        <input type="text" name ="email" id="email" class="form-control" aria-describedby="EmailCliente" required>
+                        <input type="text" name ="email" id="email" class="form-control" value="<?php echo $row['email']?>" aria-describedby="EmailCliente" required>
                       </div>
                       <div class="col-auto">
                         <label for="senha" class="col-form-label">Senha do Cliente:</label>
                       </div>
                       <div class="col-auto">
-                        <input type="password" name ="senha" id="senha" class="form-control" aria-describedby="SenhaCliente" required>
+                        <input type="password" name ="senha" id="senha" class="form-control" value="<?php echo $row['senha']?>" aria-describedby="SenhaCliente" required>
                       </div>
                   </div>
                   <div>
                     <input type="checkbox" id="ativo" name="ativo" value="1" checked>
-                    <label for="ativo">Ativo</label>
+                    <label for="ativo" value="<?php echo $row['ativo']?>">Ativo</label>
                   </div>
                   <div>
                     <label for="cidade">CIDADE</label>

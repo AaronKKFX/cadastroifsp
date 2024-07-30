@@ -3,7 +3,9 @@
     include('includes/conexao.php');
     $id =$_POST['id'];
     $nome =$_POST['nome'];
-    $estado =$_POST['estado'];
+    $email =$_POST['email'];
+    $senha =$_POST['senha'];
+    $cidade =$_POST['cidade'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +20,14 @@
     <?php
     echo "<p>ID: $id</p>";
     echo "<p>NOME: $nome</p>";
-    echo "<p>ESTADO: $estado</p>"; 
-        $sql = "UPDATE cidade SET 
+    echo "<p>EMAIL: $estado</p>"; 
+    echo "<p>SENHA: $estado</p>"; 
+    echo "<p>CIDADE: $cidade</p>";
+        $sql = "UPDATE cliente SET 
                     nome  = '$nome',
-                    estado = '$estado'
+                    email = '$email',
+                    senha = '$senha',
+                    cidade = '$cidade'
                 WHERE id = $id ";
         $result = mysqli_query($con,$sql);
         if ($result)
